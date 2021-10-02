@@ -22,8 +22,8 @@ const HomePage = () => {
 			console.log(result);
 			if (result.length > 0) {
 				setCommunities(result);
-				setIsloading(false);
 			}
+			setIsloading(false);
 		})();
 	}, []);
 

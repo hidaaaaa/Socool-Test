@@ -29,8 +29,8 @@ const CommunityFeature = () => {
 			const result = await communityApi.getById({ id: params.idCommunity });
 			if (result.length > 0) {
 				setCommunity(result[0]);
-				setIsloading(false);
 			}
+			setIsloading(false);
 		})();
 	}, []);
 
