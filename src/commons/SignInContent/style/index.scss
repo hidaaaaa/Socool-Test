@@ -1,0 +1,103 @@
+@import "../../../assets/scss/main.scss";
+
+.signInContent {
+	width: 30%;
+	height: 70%;
+	box-shadow: $card-shadow;
+	border-radius: 40px;
+	text-align: center;
+	color: $dark-color-1;
+	background-color: $light-color-5;
+
+	position: absolute;
+	top: 15%;
+	left: 35%;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+
+	@include tabletAndDesktop {
+		width: 40%;
+		height: 80%;
+
+		left: 30%;
+		top: 10%;
+	}
+
+	@include tablet {
+		width: 60%;
+		height: 80%;
+
+		left: 20%;
+		top: 10%;
+	}
+
+	@include mobile {
+		width: 90%;
+		height: 90%;
+
+		left: 5%;
+		top: 5%;
+	}
+
+	&__logo {
+		margin-bottom: 1rem;
+
+		& > img {
+			width: 30%;
+		}
+	}
+
+	&__title {
+		font-size: 1.5rem;
+		margin-bottom: 5rem;
+	}
+
+	&__button {
+		width: 100%;
+		padding: 0 15%;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+
+		&--btn {
+			font-size: 1.1rem;
+			height: 3rem;
+			width: 100%;
+			border: none;
+			border-radius: 12px;
+			margin-bottom: 1.2rem;
+
+			&.phone {
+				color: $light-color-1;
+				background-color: $primary-color-1;
+			}
+
+			&.facebook,
+			&.twitter {
+				color: $dark-color-1;
+				background-color: $light-color-5;
+				border: 1.6px solid $light-color-2;
+			}
+		}
+	}
+
+	&__link {
+		margin-top: 2rem;
+		& > a {
+			font-size: 1rem;
+			color: $primary-color-2 !important;
+		}
+	}
+
+	&__forgot {
+		& > a {
+			font-size: 0.8rem;
+			color: $dark-color-1 !important;
+		}
+	}
+}

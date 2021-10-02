@@ -1,0 +1,48 @@
+@import "../../../assets/scss/main.scss";
+
+.authIntroduce {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+
+	width: 85%;
+	margin: auto;
+	text-align: center;
+
+	&__video {
+		margin-bottom: 3rem;
+		width: 100% !important;
+	}
+
+	&__content {
+		&--description {
+			padding-left: 4rem;
+			padding-right: 4rem;
+			font-size: 1.1rem;
+			color: $dark-color-1;
+		}
+
+		&--profile {
+			margin-top: 5rem;
+			& > h1 {
+				color: $primary-color-1;
+				margin-bottom: 0.4rem;
+			}
+			& > p {
+				color: $dark-color-1;
+			}
+		}
+	}
+}
+
+.player-wrapper {
+	position: relative;
+	padding-top: 56.25%; /* Player ratio: 100 / (1280 / 720) */
+}
+
+.react-player {
+	position: absolute;
+	top: 0;
+	left: 0;
+}

@@ -1,0 +1,56 @@
+@import "../../../assets/scss/main.scss";
+
+.authContent {
+	width: 70%;
+	height: 70%;
+	box-shadow: $card-shadow;
+	border-radius: 40px;
+	text-align: center;
+	color: $dark-color-1;
+	background-color: $light-color-5;
+
+	position: absolute;
+	top: 15%;
+	left: 15%;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+
+	@include mobile {
+		width: 90%;
+		height: 90%;
+
+		top: 5%;
+		left: 5%;
+	}
+
+	&__logo {
+		margin-bottom: 1rem;
+
+		& > img {
+			width: 30%;
+		}
+	}
+
+	&__title {
+		font-size: 1.2rem;
+		margin-bottom: 1rem;
+	}
+
+	&__descripton {
+		font-size: 0.8rem;
+		padding: 0 15%;
+	}
+
+	&__form {
+		margin-top: 2rem;
+		width: 100%;
+		padding: 0 15%;
+
+		@include mobile {
+			padding: 10%;
+		}
+	}
+}
