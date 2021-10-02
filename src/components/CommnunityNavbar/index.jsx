@@ -19,7 +19,7 @@ const CommnunityNavbar = ({ community, handleOpenDrawler }) => {
 				<Avatar
 					src={
 						!!community.logoUrl
-							? `${process.env.REACT_APP_BASE_API}${community.logoUrl?.formats.small.url}`
+							? `${process.env.REACT_APP_BASE_API}${community.logoUrl?.url}`
 							: "https://vnpi-hcm.vn/wp-content/uploads/2018/01/no-image-800x600.png"
 					}
 					className="communityNavbar__content--img"
