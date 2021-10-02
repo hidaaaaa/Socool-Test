@@ -2,15 +2,18 @@ import { notification } from "antd";
 import communityApi from "api/communityApi";
 import axios from "axios";
 import CreateCommunityForm from "components/CreateCommunityForm";
+import LoadingPage from "components/LoadingPage";
 import React, { useState } from "react";
 import { useMoralis } from "react-moralis";
 import { useSelector } from "react-redux";
+import { useHistory } from "react-router";
 import "./style/index.scss";
 
 const CreateCommunityPage = () => {
 	const [isLoading, setIsLoading] = useState(false);
 	const user = useSelector((state) => state.auth.current.user);
 	const { Moralis } = useMoralis();
+	const history = useHistory();
 	// console.log(user.id);
 	const handleSubmitCreateCommunity = async (values) => {
 		setIsLoading(true);
@@ -63,6 +66,7 @@ const CreateCommunityPage = () => {
 				const data = communityApi.createCommnutity(communityData);
 				if (!!!data.error) {
 					setIsLoading(false);
+					history.push("/");
 					return notification.success({
 						message: "Create success",
 					});
@@ -72,6 +76,7 @@ const CreateCommunityPage = () => {
 				const data = communityApi.createCommnutity(communityData);
 				if (!!!data.error) {
 					setIsLoading(false);
+					history.push("/");
 					return notification.success({
 						message: "Create success",
 					});
@@ -79,11 +84,16 @@ const CreateCommunityPage = () => {
 			}
 		} catch (error) {
 			console.log(error);
+			setIsLoading(false);
 			return notification.error({
 				message: "transfer fail",
 			});
 		}
 	};
+
+	if (isLoading) {
+		return <LoadingPage />;
+	}
 
 	return (
 		<div className="createCommunityPage">
