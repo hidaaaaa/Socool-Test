@@ -1,0 +1,22 @@
+@import "assets/scss/main.scss";
+
+html {
+	font-size: 12px !important;
+	color: $dark-color-1;
+
+	@include largeDesktop {
+		font-size: 14px !important;
+	}
+
+	@include tabletAndDesktop {
+		font-size: 10px !important;
+	}
+
+	@include tablet {
+		font-size: 16px !important;
+	}
+
+	@include mobile {
+		font-size: 16px !important;
+	}
+}
