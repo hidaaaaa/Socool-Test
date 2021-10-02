@@ -1,18 +1,20 @@
 import { notification } from "antd";
 import communityApi from "api/communityApi";
-import uploadApi from "api/uploadApi";
 import axios from "axios";
 import CreateCommunityForm from "components/CreateCommunityForm";
-import React from "react";
+import React, { useState } from "react";
 import { useMoralis } from "react-moralis";
 import { useSelector } from "react-redux";
 import "./style/index.scss";
 
 const CreateCommunityPage = () => {
+	const [isLoading, setIsLoading] = useState(false);
 	const user = useSelector((state) => state.auth.current.user);
 	const { Moralis } = useMoralis();
 	// console.log(user.id);
 	const handleSubmitCreateCommunity = async (values) => {
+		setIsLoading(true);
+
 		const options = {
 			type: "erc20",
 			amount: Moralis.Units.Token(30, 18),
@@ -60,6 +62,7 @@ const CreateCommunityPage = () => {
 				await console.log(result);
 				const data = communityApi.createCommnutity(communityData);
 				if (!!!data.error) {
+					setIsLoading(false);
 					return notification.success({
 						message: "Create success",
 					});
@@ -68,6 +71,7 @@ const CreateCommunityPage = () => {
 				console.log(communityData);
 				const data = communityApi.createCommnutity(communityData);
 				if (!!!data.error) {
+					setIsLoading(false);
 					return notification.success({
 						message: "Create success",
 					});
@@ -89,6 +93,7 @@ const CreateCommunityPage = () => {
 				<h2 className="createCommunityPage__form--title">Basic Information</h2>
 				<CreateCommunityForm
 					handleSubmitCreateCommunity={handleSubmitCreateCommunity}
+					isLoading={isLoading}
 				/>
 			</div>
 		</div>

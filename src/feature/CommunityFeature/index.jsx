@@ -9,6 +9,7 @@ import CommunityContent from "commons/CommunityContent";
 import CommnunityNavbar from "components/CommnunityNavbar";
 import CommunityHeader from "components/CommunityHeader";
 import CommunityStat from "components/CommunityStat";
+import LoadingPage from "components/LoadingPage";
 import useWindowSize from "customHook/useWindowSize";
 import React, { useEffect, useState } from "react";
 import { Redirect, Route, Switch, useRouteMatch } from "react-router";
@@ -19,6 +20,7 @@ const CommunityFeature = () => {
 	const [community, setCommunity] = useState({});
 	const [visibleNavbar, setVisibleNavbar] = useState(false);
 	const [visibleStat, setVisibleStat] = useState(false);
+	const [isLoading, setIsloading] = useState(true);
 
 	const { width } = useWindowSize();
 
@@ -27,6 +29,7 @@ const CommunityFeature = () => {
 			const result = await communityApi.getById({ id: params.idCommunity });
 			if (result.length > 0) {
 				setCommunity(result[0]);
+				setIsloading(false);
 			}
 		})();
 	}, []);
@@ -38,6 +41,10 @@ const CommunityFeature = () => {
 	const onCloseDrawerStat = () => {
 		setVisibleStat(false);
 	};
+
+	if (isLoading) {
+		return <LoadingPage />;
+	}
 
 	return (
 		<div className="communityFeature">

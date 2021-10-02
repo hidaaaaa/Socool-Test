@@ -1,6 +1,7 @@
 import userApi from "api/userApi";
 import { getUserInfo } from "commons/useSlice";
 import { PrivateRoute, PublicRoute } from "components/CustomRoute";
+import LoadingPage from "components/LoadingPage";
 import AuthFeature from "feature/AuthFeature";
 import CommunityFeature from "feature/CommunityFeature";
 import ForgotFeature from "feature/ForgotFeature";
@@ -16,7 +17,7 @@ import SignUpFeature from "./feature/SignUpFeature";
 function App() {
 	const jwt = useSelector((state) => state.auth.current.jwt);
 	// const Web3Api = useMoralisWeb3Api();
-	const [isLoading, setIsloading] = useState([true]);
+	const [isLoading, setIsloading] = useState(true);
 	const dispatch = useDispatch();
 	// const { authenticate, isAuthenticated, user, logout } = useMoralis();
 
@@ -41,8 +42,13 @@ function App() {
 		})();
 	}, [jwt]);
 
-	if (isLoading) return <>loading...</>;
-
+	if (isLoading) {
+		return (
+			<div className="App">
+				<LoadingPage />
+			</div>
+		);
+	}
 	return (
 		<div className="App">
 			<Switch>

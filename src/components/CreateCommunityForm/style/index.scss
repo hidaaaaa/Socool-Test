@@ -99,17 +99,24 @@
 		width: 100%;
 		&--btn {
 			font-size: 1.4rem;
-			color: $light-color-5;
+			color: $light-color-5 !important;
 			background: $linear-color;
 			border: none;
 			width: 48%;
 			padding: 1.5rem 2rem;
 			border-radius: 10px;
+			height: auto !important;
+
+			transition: 0.5s all;
 
 			@include mobile {
 				width: 100%;
 				margin-bottom: 1rem;
 				padding: 1rem 1rem;
+			}
+
+			&.loading {
+				background: linear-gradient(180deg, #ddc5f0 0%, #9462ff 100%);
 			}
 		}
 	}

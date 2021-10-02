@@ -1,12 +1,12 @@
 import communityApi from "api/communityApi";
+import LoadingPage from "components/LoadingPage";
 import Post from "components/Post";
 import React, { useEffect, useState } from "react";
 import "./style/index.scss";
 
 const Feed = ({ id, community }) => {
-	// const { params } = useRouteMatch();
+	const [isLoading, setIsloading] = useState(true);
 	const [communities, setCommunities] = useState([]);
-	// console.log(params);
 
 	useEffect(() => {
 		(async () => {
@@ -16,9 +16,14 @@ const Feed = ({ id, community }) => {
 			console.log(result);
 			if (result.length > 0) {
 				setCommunities(result);
+				setIsloading(false);
 			}
 		})();
 	}, []);
+
+	if (isLoading) {
+		return <LoadingPage />;
+	}
 
 	return (
 		<div className="feed">

@@ -2,6 +2,7 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Avatar, Button, Col, Row } from "antd";
 import communityApi from "api/communityApi";
+import LoadingPage from "components/LoadingPage";
 import useWindowSize from "customHook/useWindowSize";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
@@ -11,6 +12,7 @@ import "./style/index.scss";
 
 const HomePage = () => {
 	const user = useSelector((state) => state.auth.current.user);
+	const [isLoading, setIsloading] = useState(true);
 	const [communities, setCommunities] = useState([]);
 	const { width } = useWindowSize();
 
@@ -20,9 +22,14 @@ const HomePage = () => {
 			console.log(result);
 			if (result.length > 0) {
 				setCommunities(result);
+				setIsloading(false);
 			}
 		})();
 	}, []);
+
+	if (isLoading) {
+		return <LoadingPage />;
+	}
 
 	return (
 		<div className="homePage">

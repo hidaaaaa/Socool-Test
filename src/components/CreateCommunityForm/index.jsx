@@ -6,7 +6,7 @@ import React from "react";
 import { Controller, useForm } from "react-hook-form";
 import "./style/index.scss";
 
-const CreateCommunityForm = ({ handleSubmitCreateCommunity }) => {
+const CreateCommunityForm = ({ handleSubmitCreateCommunity, isLoading }) => {
 	const form = useForm({
 		defaultValues: {
 			name: "",
@@ -128,8 +128,13 @@ const CreateCommunityForm = ({ handleSubmitCreateCommunity }) => {
 			</div>
 
 			<div className="createCommunityForm__button">
-				<button className="createCommunityForm__button--btn">
-					Create Community
+				<button
+					disabled={isLoading}
+					className={`createCommunityForm__button--btn ${
+						isLoading && "loading"
+					}`}
+				>
+					{isLoading ? "Loading..." : "Create Community"}
 				</button>
 			</div>
 		</form>
