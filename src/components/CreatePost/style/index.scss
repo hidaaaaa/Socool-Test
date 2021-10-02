@@ -1,0 +1,29 @@
+@import "../../../assets/scss/main.scss";
+
+.createPost {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	background-color: $light-color-5;
+
+	padding: 1rem 2rem;
+	border-radius: 15px;
+
+	box-shadow: $box-shadow;
+
+	&__group {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+
+		& > * {
+			border-radius: 10px;
+			margin: 0 0.5rem;
+
+			color: $dark-color-1;
+			background-color: $light-color-2;
+			font-size: 0.9rem;
+		}
+	}
+}
