@@ -1,0 +1,42 @@
+@import "../../../assets/scss/main.scss";
+
+.communityStat {
+	display: flex;
+	flex-direction: column;
+	color: $dark-color-1;
+	background-color: $light-color-5;
+	padding: 1.5rem;
+	border-radius: 30px;
+
+	font-size: 1rem;
+
+	&__title {
+		padding-bottom: 1rem;
+
+		border-bottom: 1.4px solid rgba($color: $dark-color-1, $alpha: 0.4);
+	}
+
+	&__content {
+		margin-top: 1.5rem;
+		&--item {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+
+			padding: 0.4rem 0;
+		}
+	}
+
+	&.share {
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+
+		flex-direction: unset;
+
+		border-radius: 20px;
+
+		margin-top: 1rem;
+		padding: 1.2rem;
+	}
+}

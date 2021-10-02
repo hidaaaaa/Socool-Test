@@ -1,0 +1,80 @@
+@import "../../../assets/scss/main.scss";
+
+.post {
+	padding: 2rem 0;
+	border-radius: 20px;
+	color: $dark-color-1;
+	background-color: $light-color-5;
+
+	box-shadow: $box-shadow;
+
+	&__brand {
+		padding: 0 2rem;
+		font-size: 1rem;
+		margin-bottom: 1rem;
+	}
+
+	&__logo {
+		padding: 0 2rem;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		margin-bottom: 1rem;
+
+		&--image {
+			width: 3rem;
+			height: 3rem;
+			border: 1px solid rgba($color: $dark-color-1, $alpha: 0.4);
+
+			margin-right: 1rem;
+		}
+
+		&--group {
+			display: flex;
+			flex-direction: column;
+
+			& > .group {
+				&__name {
+					font-size: 1.2rem;
+				}
+				&__time {
+					font-size: 1rem;
+					color: rgba($color: $dark-color-1, $alpha: 0.8);
+				}
+			}
+		}
+	}
+
+	&__description {
+		padding: 0 2rem;
+		margin-bottom: 1rem;
+	}
+
+	&__buttons {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+
+		padding: 0 2rem;
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+
+		&--btn {
+			display: flex;
+			align-items: center;
+			justify-content: flex-start;
+
+			margin-right: 0.5rem;
+			color: rgba($color: $dark-color-1, $alpha: 0.8);
+
+			& > * {
+				margin-right: 0.2rem;
+			}
+		}
+	}
+
+	&__end {
+		padding: 0 2rem;
+		font-size: 1rem;
+	}
+}

@@ -1,0 +1,192 @@
+@import "../../../assets/scss/main.scss";
+
+.createCommunityForm {
+	&__basic {
+		display: flex;
+		align-items: flex-start;
+		justify-content: flex-start;
+		margin-bottom: 2rem;
+
+		@include mobile {
+			flex-direction: column;
+		}
+
+		&--image {
+			width: 10rem;
+			height: 10rem;
+			margin-right: 5rem;
+
+			& > .image {
+				&__title {
+					color: $dark-color-1;
+					font-size: 1.4rem;
+					margin-bottom: 1rem;
+					@include mobile {
+						font-size: 1rem;
+					}
+				}
+
+				&__img {
+					width: 100%;
+					height: 100%;
+				}
+			}
+
+			@include mobile {
+				margin-bottom: 4rem;
+			}
+		}
+
+		&--group {
+			width: calc(100% - 15rem);
+
+			@include mobile {
+				width: calc(100%);
+			}
+
+			& > .group {
+				&__title {
+					color: $dark-color-1;
+					font-size: 1.4rem;
+					margin-bottom: 1rem;
+					@include mobile {
+						font-size: 1rem;
+					}
+				}
+
+				&__input {
+					font-size: 1rem;
+					border: 1.4px solid rgba($color: $dark-color-1, $alpha: 0.4);
+					border-radius: 8px;
+					margin-bottom: 1rem;
+				}
+			}
+		}
+	}
+
+	&__cover {
+		margin-bottom: 2rem;
+
+		&--title {
+			color: $dark-color-1;
+			font-size: 1.4rem;
+			margin-bottom: 1rem;
+			@include mobile {
+				font-size: 1rem;
+			}
+		}
+
+		&--img {
+			width: 100%;
+			height: 10rem;
+		}
+	}
+
+	&__access {
+		margin-bottom: 2rem;
+
+		&--title {
+			color: $dark-color-1;
+			font-size: 1.4rem;
+			margin-bottom: 1rem;
+			@include mobile {
+				font-size: 1rem;
+			}
+		}
+	}
+
+	&__button {
+		width: 100%;
+		&--btn {
+			font-size: 1.4rem;
+			color: $light-color-5;
+			background: $linear-color;
+			border: none;
+			width: 48%;
+			padding: 1.5rem 2rem;
+			border-radius: 10px;
+
+			@include mobile {
+				width: 100%;
+				margin-bottom: 1rem;
+				padding: 1rem 1rem;
+			}
+		}
+	}
+}
+
+.ant-radio-group {
+	&.group {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: stretch;
+
+		@include mobile {
+			flex-direction: column;
+		}
+
+		& > .group {
+			&__item {
+				width: 48%;
+				padding: 2rem;
+				height: auto !important;
+				border-radius: 30px;
+				border: 1.4px solid rgba($color: $dark-color-1, $alpha: 0.4);
+
+				@include mobile {
+					width: 100%;
+					margin-bottom: 1rem;
+				}
+
+				& > span {
+					& > .group__item--name {
+						color: $dark-color-1;
+						font-size: 2rem;
+						margin-top: 1rem;
+
+						@include mobile {
+							font-size: 1.2rem;
+						}
+					}
+
+					& > .group__item--description {
+						color: $dark-color-1;
+						font-size: 1.2rem;
+						margin-top: 1.2rem;
+
+						@include mobile {
+							font-size: 1rem;
+						}
+					}
+				}
+
+				&::before {
+					content: none;
+				}
+
+				&:hover {
+					border: 1.4px solid $primary-color-1 !important;
+					color: $primary-color-1 !important;
+
+					& > span {
+						& > .group__item--icon {
+							background-color: $primary-color-1 !important;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.ant-radio-button-wrapper-checked {
+	border: 1.4px solid $primary-color-1 !important;
+	color: $primary-color-1 !important;
+
+	& > span {
+		& > .group__item--icon {
+			background-color: $primary-color-1 !important;
+		}
+	}
+}
