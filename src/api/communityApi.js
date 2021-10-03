@@ -2,16 +2,16 @@ import axiosClient from "./axiosClient";
 
 const communityApi = {
 	async getByUserId(values) {
-		const url = `/communities?adminId=${values.id}`;
+		const url = `/names?adminId=${values.id}`;
 		return await axiosClient.get(url);
 	},
 	async createCommnutity(values) {
-		const url = "/communities";
+		const url = "/names";
 
 		return await axiosClient.post(url, values);
 	},
 	async getById(values) {
-		const url = `/communities?id=${values.id}`;
+		const url = `/names?id=${values.id}`;
 		return await axiosClient.get(url);
 	},
 	async getPostByIdCommunity(values) {
