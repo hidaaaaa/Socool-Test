@@ -56,7 +56,7 @@ const SendPage = () => {
 			</div>
 
 			<div className="balancePage__item">
-				<div className="balancePage__item--name">Address </div>
+				<div className="balancePage__item--name">Value </div>
 				<InputNumber
 					value={value}
 					onChange={(value) => setValue(value)}
