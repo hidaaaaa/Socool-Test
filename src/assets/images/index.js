@@ -14,6 +14,8 @@ import My from "./icon/my.svg";
 import Play from "./icon/play.svg";
 import Heart from "./icon/heart.svg";
 import Comment from "./icon/comment.svg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faExchangeAlt, faUser } from "@fortawesome/free-solid-svg-icons";
 
 const mainMenuData = [
 	{
@@ -81,4 +83,26 @@ const communityMenu = [
 	},
 ];
 
-export { logo, userId, Play, Comment, Heart, mainMenuData, communityMenu };
+const sendTokenMenu = [
+	{
+		icon: <FontAwesomeIcon icon={faUser} />,
+		title: "Balance",
+		url: "/balance",
+	},
+	{
+		icon: <FontAwesomeIcon icon={faExchangeAlt} />,
+		title: "Send Token",
+		url: "/send",
+	},
+];
+
+export {
+	logo,
+	userId,
+	Play,
+	Comment,
+	Heart,
+	mainMenuData,
+	communityMenu,
+	sendTokenMenu,
+};

@@ -1,0 +1,51 @@
+@import "../../../assets/scss/main.scss";
+
+.sendToken {
+	background-color: $light-color-3;
+	min-height: 100vh;
+
+	&__btn {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		margin-top: 0.5rem;
+		margin-left: 1rem;
+
+		& > * {
+			margin-right: 1rem;
+		}
+	}
+
+	&__body {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+
+		padding: 2rem;
+
+		&--navbar {
+			width: 20%;
+			padding: 1rem;
+
+			@include tablet {
+				width: 100%;
+			}
+
+			@include mobile {
+				width: 100%;
+			}
+		}
+
+		&--content {
+			width: 80%;
+			padding: 1rem;
+
+			@include tablet {
+				width: 100%;
+			}
+			@include mobile {
+				width: 100%;
+			}
+		}
+	}
+}

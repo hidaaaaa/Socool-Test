@@ -7,6 +7,7 @@ import CommunityFeature from "feature/CommunityFeature";
 import ForgotFeature from "feature/ForgotFeature";
 import MainFeature from "feature/MainFeature";
 import NotFoundFeature from "feature/NotFoundFeature";
+import SendTokenFeature from "feature/SendTokenFeature";
 import SignInFeature from "feature/SignInFeature";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -62,6 +63,7 @@ function App() {
 					path="/community/:idCommunity"
 					component={CommunityFeature}
 				/>
+				<PrivateRoute path="/send-token" component={SendTokenFeature} />
 				<PublicRoute path="/" component={AuthFeature} exact />
 				<PublicRoute path="/sign-up" component={SignUpFeature} />
 				<PublicRoute path="/sign-in" component={SignInFeature} />
