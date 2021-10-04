@@ -13,9 +13,10 @@ import "./style/index.scss";
 const UserInfoBox = () => {
 	const userx = useSelector((state) => state.auth.current.user);
 	const dispatch = useDispatch();
-	const { isAuthenticated, authenticate, user } = useMoralis();
+	const { isAuthenticated, authenticate, user, logout } = useMoralis();
 
 	const handleSignOut = async () => {
+		logout();
 		const action = lg();
 		await dispatch(action);
 	};
